@@ -6,9 +6,12 @@
 /*   By: jbarette <jbarette@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 00:33:40 by jbarette          #+#    #+#             */
-/*   Updated: 2021/09/28 00:46:10 by jbarette         ###   ########.fr       */
+/*   Updated: 2021/10/01 03:35:37 by jbarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
+#include <ctype.h>
 
 int	main(int argc, char *argv[])
 {
