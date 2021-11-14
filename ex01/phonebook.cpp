@@ -12,25 +12,36 @@
 
 #include "phonebook.h"
 
-void	Phonebook::add_contact()
+Contact	Phonebook::addContact(int id)
 {
-	Contact	new_contact;
+	Contact	contact;
 	std::string tmp;
 
+	contact.setId(id);
 	std::cout << "First name" << std::endl;
 	std::getline (std::cin, tmp);
-	new_contact.setFirstName(tmp);
+	contact.setFirstName(tmp);
 	std::cout << "Last name" << std::endl;
 	std::getline (std::cin, tmp);
-	new_contact.setLastName(tmp);
+	contact.setLastName(tmp);
 	std::cout << "Nickname" << std::endl;
 	std::getline (std::cin, tmp);
-	new_contact.setNickanme(tmp);
+	contact.setNickanme(tmp);
 	std::cout << "Phone number" << std::endl;
 	std::getline (std::cin, tmp);
-	new_contact.setPhoneNumber(tmp);
+	contact.setPhoneNumber(tmp);
 	std::cout << "Darkest secret" << std::endl;
 	std::getline (std::cin, tmp);
+	contact.setDarkestSecret(tmp);
+	return contact;
+}
 
-	this->contact = contact;
+void		Phonebook::setContact(Contact contact, int id)
+{
+	this->contactBook[id] = contact;
+}
+
+Contact		Phonebook::getContact(int id)
+{
+	return this->contactBook[id];
 }

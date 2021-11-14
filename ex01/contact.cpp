@@ -12,24 +12,34 @@
 
 #include "contact.h"
 
-void	Contact::setFirstName(std::string first_name)
+void	Contact::setId(int	id)
 {
-	this->first_name = first_name;
+	this->id = id;
+}
+
+int		Contact::getId()
+{
+	return id;
+}
+
+void	Contact::setFirstName(std::string firstName)
+{
+	this->firstName = firstName;
 }
 
 std::string	Contact::getFirstName()
 {
-	return	first_name;
+	return	firstName;
 }
 
-void	Contact::setLastName(std::string last_name)
+void	Contact::setLastName(std::string lastName)
 {
-	this->last_name = last_name;
+	this->lastName = lastName;
 }
 
 std::string	Contact::getLastName()
 {
-	return	last_name;
+	return	lastName;
 }
 
 void	Contact::setNickanme(std::string nickname)
@@ -42,22 +52,22 @@ std::string	Contact::getNickname()
 	return	nickname;
 }
 
-void	Contact::setPhoneNumber(std::string phone_number)
+void	Contact::setPhoneNumber(std::string phoneNumber)
 {
-	this->phone_number = phone_number;
+	this->phoneNumber = phoneNumber;
 }
 
 std::string	Contact::getPhoneNumber()
 {
-	return	phone_number;
+	return	phoneNumber;
 }
 
-void	Contact::setDarkestSecret(std::string darkest_secret)
+void	Contact::setDarkestSecret(std::string darkestSecret)
 {
-	this->darkest_secret = darkest_secret;
+	this->darkestSecret = darkestSecret;
 }
 
 std::string	Contact::getDarkestSecret()
 {
-	return	darkest_secret;
+	return	darkestSecret;
 }
