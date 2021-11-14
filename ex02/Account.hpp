@@ -15,10 +15,13 @@
 //                               Account Class                                //
 // ************************************************************************** //
 
+#include <iostream>
+#include <iomanip>
+#include <string>
+
 class Account
 {
     public:
-
         typedef Account		t;
 
         static int	getNbAccounts(void);
@@ -34,9 +37,7 @@ class Account
         bool	makeWithdrawal(int withdrawal);
         int		checkAmount(void) const;
         void	displayStatus(void) const;
-
     private:
-
         static int	_nbAccounts;
         static int	_totalAmount;
         static int	_totalNbDeposits;

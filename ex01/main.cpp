@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbarette <jbarette@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: jbarette <jbarette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1021/09/28 22:11:09 by jbarette          #+#    #+#             */
-/*   Updated: 1021/10/01 02:12:16 by jbarette         ###   ########.fr       */
+/*   Updated: 2021/11/14 17:10:41 by jbarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.h"
+#include "phonebook.hpp"
 
 std::string	truncate(std::string str, size_t width)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbarette <jbarette@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: jbarette <jbarette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 02:03:04 by jbarette          #+#    #+#             */
-/*   Updated: 2021/10/01 03:14:45 by jbarette         ###   ########.fr       */
+/*   Updated: 2021/11/14 17:10:33 by jbarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.h"
+#include "contact.hpp"
 
 void	Contact::setId(int	id)
 {

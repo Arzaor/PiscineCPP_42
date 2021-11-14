@@ -1,7 +1,7 @@
 CC		= clang++
 CFLAGS	= -Wall -Wextra -Werror 
 NAME	= account
-OBJS	= test.o account.o
+OBJS	= test.o Account.o
 
 all:	$(NAME)
 
