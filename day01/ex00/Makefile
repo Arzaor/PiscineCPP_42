@@ -1,4 +1,4 @@
-CC		= clang++
+CC		= g++
 CFLAGS	= -Wall -Wextra -Werror 
 NAME	= zombie
 OBJS	= main.o Zombie.o newZombie.o randomChump.o
