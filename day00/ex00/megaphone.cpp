@@ -10,25 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include <iostream>
+#include <string>
 
-int	main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int	i, k;
-
-	i = 1;
-	if (argc > 1)
-	{
-		while (argv[i])
-		{
-			k = 0;
-			while (argv[i][k])
-				printf("%c", toupper(argv[i][k++]));
-			i++;
-		}
-	}
-	else
-		printf("* LOUD AND UNBEARABLE FEEDBACK NOISE *");
-	return 0;
+    std::string s;
+    if(argc < 2)
+            std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+    for(int i = 1; argv[i];i++)
+    {
+        s = argv[i];
+        std::transform(s.begin(), s.end(),s.begin(),::toupper);
+        std::cout << s << std::endl;
+    }
 }
