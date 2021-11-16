@@ -6,18 +6,20 @@
 /*   By: jbarette <jbarette@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:43:55 by jbarette          #+#    #+#             */
-/*   Updated: 2021/11/16 02:50:35 by jbarette         ###   ########.fr       */
+/*   Updated: 2021/11/16 03:01:24 by jbarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
-int	main()
+int	main(int argc, char *argv[])
 {
 	Karen karen;
-	karen.complain("DEBUG");
-	karen.complain("INFO");
-	karen.complain("WARNING");
-	karen.complain("ERROR");
+	if (argc < 2)
+	{
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		return (0);
+	}
+	karen.complain(argv[1]);
 	return (0);
 }

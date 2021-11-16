@@ -6,7 +6,7 @@
 /*   By: jbarette <jbarette@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:43:58 by jbarette          #+#    #+#             */
-/*   Updated: 2021/11/16 02:59:52 by jbarette         ###   ########.fr       */
+/*   Updated: 2021/11/16 03:00:56 by jbarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,22 @@ void	Karen::complain(std::string level)
 	while (i <= 3)
 	{
 		if (level == this->indexMessage[i])
-			(this->*message[i])();
+		{
+			switch (i)
+			{
+				case 0:
+					(this->*message[0])();
+				case 1:
+					(this->*message[1])();
+				case 2:
+					(this->*message[2])();
+				case 3:
+					(this->*message[3])();
+					return ;
+				default:
+					std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			}
+		}
 		i++;
 	}
 }
