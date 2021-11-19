@@ -6,7 +6,7 @@
 #include <string>
 #include "contact.hpp"
 
-class Phonebook
+class PhoneBook
 {
 	public:
 

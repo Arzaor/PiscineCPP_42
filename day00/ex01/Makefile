@@ -1,7 +1,7 @@
 CC		= clang++
 CFLAGS	= -Wall -Wextra -Werror 
 NAME	= phonebook
-OBJS	= main.o phonebook.o contact.o
+OBJS	= main.o PhoneBook.o contact.o
 
 all:	$(NAME)
 

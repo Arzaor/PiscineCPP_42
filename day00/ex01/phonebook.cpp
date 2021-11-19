@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jbarette <jbarette@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/28 22:13:56 by jbarette          #+#    #+#             */
-/*   Updated: 2021/11/14 17:10:44 by jbarette         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "PhoneBook.hpp"
 
-#include "phonebook.hpp"
-
-Contact	Phonebook::addContact(int id)
+Contact	PhoneBook::addContact(int id)
 {
 	Contact	contact;
 	std::string tmp;
@@ -36,12 +24,12 @@ Contact	Phonebook::addContact(int id)
 	return contact;
 }
 
-void		Phonebook::setContact(Contact contact, int id)
+void		PhoneBook::setContact(Contact contact, int id)
 {
 	this->contactBook[id] = contact;
 }
 
-Contact		Phonebook::getContact(int id)
+Contact		PhoneBook::getContact(int id)
 {
 	return this->contactBook[id];
 }
