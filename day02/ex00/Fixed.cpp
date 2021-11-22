@@ -9,8 +9,6 @@ Fixed::Fixed(Fixed const & src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
-
-	return;
 }
 
 Fixed::~Fixed()
@@ -31,4 +29,9 @@ int	Fixed::getRawBits() const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return this->raw;
+}
+
+void	Fixed::setRawBits(int const raw)
+{
+	this->raw = raw;
 }
