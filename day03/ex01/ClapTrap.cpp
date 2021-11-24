@@ -22,6 +22,12 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap destructor called." << std::endl;
 }
 
+ClapTrap::ClapTrap( ClapTrap const & rhs )
+{
+	std::cout << "ClapTrap Copy constructor : " << rhs._name << std::endl;
+	*this = rhs;
+}
+
 ClapTrap& ClapTrap::operator=(ClapTrap const & rhs)
 {
 	this->_name = rhs._name;
@@ -84,4 +90,10 @@ void	ClapTrap::setAttackDamage(int attackDamage)
 int		ClapTrap::getAttackDamage(void)
 {
 	return attackDamage;
+}
+
+std::ostream&	operator<<(std::ostream& ofs, ClapTrap const & rhs)
+{
+	std::cout << rhs.getName();
+	return (ofs);
 }

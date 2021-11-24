@@ -2,12 +2,14 @@
 
 int	main(void)
 {
-	ClapTrap ennemy1("Jeremy");
-	ClapTrap ennemy2("Hamza");
-	ennemy1.attack("Hamza");
-	ennemy2.takeDamage(10);
-	ennemy2.attack("Jeremy");
-	ennemy1.takeDamage(10);
-	ennemy2.beRepaired(10);
-	return 0;
+	ClapTrap	ClapTrap1("Hamza");
+	ClapTrap	ClapTrap2(ClapTrap1);
+	ClapTrap	ClapTrap3("Daniela");
+	ClapTrap	ClapTrap4;
+	ClapTrap4.setName("ClapTrap4");
+
+	ClapTrap1.attack("ClapTrap4");
+	ClapTrap4.takeDamage(ClapTrap1.getAttackDamage());
+	ClapTrap4.beRepaired(5);
+	ClapTrap3.attack("Hamza");
 }

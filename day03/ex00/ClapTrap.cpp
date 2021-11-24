@@ -17,6 +17,12 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << "ClapTrap parameter constructor called." << std::endl;
 }
 
+ClapTrap::ClapTrap( ClapTrap const & rhs )
+{
+	std::cout << "ClapTrap Copy constructor : " << rhs._name << std::endl;
+	*this = rhs;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap destructor called." << std::endl;
@@ -44,4 +50,50 @@ void	ClapTrap::takeDamage(unsigned int amount)
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "ClapTrap " << this->_name << " is repaired " << amount << " energies points " << std::endl;
+}
+
+void	ClapTrap::setName(std::string name)
+{
+	this->_name = name;
+}
+
+std::string	ClapTrap::getName(void)
+{
+	return _name;
+}
+
+void	ClapTrap::setHitPoints(int hitPoints)
+{
+	this->hitPoints = hitPoints;
+}
+
+int		ClapTrap::getHitPoints(void)
+{
+	return hitPoints;
+}
+
+void	ClapTrap::setEnergyPoints(int energyPoints)
+{
+	this->energyPoints = energyPoints;
+}
+
+int		ClapTrap::getEnergyPoints(void)
+{
+	return energyPoints;
+}
+
+void	ClapTrap::setAttackDamage(int attackDamage)
+{
+	this->attackDamage = attackDamage;
+}
+
+int		ClapTrap::getAttackDamage(void)
+{
+	return attackDamage;
+}
+
+std::ostream&	operator<<(std::ostream& ofs, ClapTrap const & rhs)
+{
+	std::cout << rhs.getName();
+	return (ofs);
 }

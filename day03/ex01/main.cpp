@@ -3,20 +3,24 @@
 
 int	main(void)
 {
-	// Initialisation d'un ClapTrap et d'un ScavTrap qui hérite de la classe ClapTrap
-	ClapTrap	clapTrap1("Jeremy");
-	ClapTrap	clapTrap2("Hamza");
-	ScavTrap	scavTrap1("Daniela");
+	// ClapTrap	ClapTrap1("Hamza");
+	// ClapTrap	ClapTrap2(ClapTrap1);
+	// ClapTrap	ClapTrap3("Daniela");
+	// ClapTrap	ClapTrap4;
+	// ClapTrap4.setName("ClapTrap4");
 
-	// Démonstration de la fonction 'attack' envers le ClapTrap "Hamza" & démonstration de la fonction 'takeDamage'
-	clapTrap1.attack("Hamza");
-	clapTrap2.takeDamage(10);
-	
-	// Affichage les attributs de 'scavTrap1'
-	std::cout << "Hit points : " << scavTrap1.getHitPoints() << std::endl;
-	std::cout << "Energy points : " << scavTrap1.getEnergyPoints() << std::endl;
-	std::cout << "Attack damage : " << scavTrap1.getAttackDamage() << std::endl;
-	// 'scavTrap1' peut aussi utiliser les fonctions de la classe 'ClapTrap'
-	scavTrap1.attack("Jeremy");
+	// ClapTrap1.attack("ClapTrap4");
+	// ClapTrap4.takeDamage(ClapTrap1.getAttackDamage());
+	// ClapTrap4.beRepaired(5);
+	// ClapTrap3.attack("Hamza");
+
+	ScavTrap	scavTrap1;
+	scavTrap1.setName("Jeremy");
+	ScavTrap	scavTrap2("Hamza");
+
+	scavTrap2.attack("Jeremy");
+	scavTrap1.takeDamage(scavTrap2.getAttackDamage());
+	scavTrap1.beRepaired(50);
+	scavTrap1.guardGate();
 	return 0;
 }
