@@ -1,7 +1,7 @@
 CC		= g++
 CFLAGS	= -Wall -Wextra -Werror 
 NAME	= claptrap
-OBJS	= main.o ClapTrap.o
+OBJS	= main.o ClapTrap.o ScavTrap.o
 
 all:	$(NAME)
 
