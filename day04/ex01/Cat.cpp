@@ -5,22 +5,20 @@ Cat::Cat(): Animal()
 {
 	std::cout << "Cat constructor called." << std::endl;
 	this->setType("Cat");
-}
-
-Cat::Cat(std::string type)
-{
-	std::cout << "Cat parameter constructor called." << std::endl;
-	this->setType(type);
+	this->brain = new Brain();
 }
 
 Cat::Cat(const Cat & rhs)
 {
 	std::cout << "Cat copy constructor called." << std::endl;
-	*this = rhs;
+	type = rhs.type;
+	brain = new Brain();
+	*brain = *(rhs.brain);
 }
 
 Cat::~Cat()
 {
+	delete this->brain;
 	std::cout << "Cat destructor called." << std::endl;
 }
 

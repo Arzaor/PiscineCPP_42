@@ -5,12 +5,7 @@ Dog::Dog(): Animal()
 {
 	std::cout << "Dog constructor called." << std::endl;
 	this->setType("Dog");
-}
-
-Dog::Dog(std::string type)
-{
-	std::cout << "Dog parameter constructor called." << std::endl;
-	this->setType(type);
+	this->brain = new Brain();
 }
 
 Dog::Dog(const Dog & rhs)
@@ -22,6 +17,7 @@ Dog::Dog(const Dog & rhs)
 Dog::~Dog()
 {
 	std::cout << "Dog destructor called." << std::endl;
+	delete this->brain;
 }
 
 void		Dog::makeSound() const
