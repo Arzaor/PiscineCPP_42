@@ -1,28 +1,46 @@
 #include "Cat.hpp"
-#include "Animal.hpp"
 
-Cat::Cat(): Animal()
+Cat::Cat( void )
 {
-	std::cout << "Cat constructor called." << std::endl;
-	this->setType("Cat");
+	std::cout << "Default Cat Constructor" << std::endl;
 	this->brain = new Brain();
 }
 
-Cat::Cat(const Cat & rhs)
+Cat::Cat( std::string type )
 {
-	std::cout << "Cat copy constructor called." << std::endl;
-	type = rhs.type;
-	brain = new Brain();
-	*brain = *(rhs.brain);
+	std::cout << "Parameter Cat Constructor" << std::endl;
+	this->setType(type);
+	this->brain = new Brain();
 }
 
-Cat::~Cat()
+Cat::Cat( Cat const & rhs )
+{
+	std::cout << "Copy Cat Constructor" << std::endl;
+	*this = rhs;
+}
+
+Cat::~Cat( void )
 {
 	delete this->brain;
-	std::cout << "Cat destructor called." << std::endl;
+	std::cout << "Destructor Cat" << std::endl;
 }
 
-void		Cat::makeSound() const
+void	Cat::makeSound( void ) const 
 {
-	std::cout << "*MEOW*" << std::endl;
+	std::cout << "The Cat is meowing" << std::endl;
+}
+
+void		Cat::setType(std::string type) {
+	this->type = type;
+}
+
+std::string	Cat::getType() const {
+	return (this->type);
+}
+
+Cat&		Cat::operator=(Cat const & rhs)
+{
+	this->brain = new Brain(*(rhs.brain));
+	this->setType(rhs.getType());
+	return (*this);
 }

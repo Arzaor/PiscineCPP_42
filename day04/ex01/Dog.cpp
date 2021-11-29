@@ -1,26 +1,46 @@
 #include "Dog.hpp"
-#include "Animal.hpp"
 
-Dog::Dog(): Animal()
+Dog::Dog( void )
 {
-	std::cout << "Dog constructor called." << std::endl;
-	this->setType("Dog");
+	std::cout << "Default Dog Constructor" << std::endl;
 	this->brain = new Brain();
 }
 
-Dog::Dog(const Dog & rhs)
+Dog::Dog( std::string type )
 {
-	std::cout << "Dog copy constructor called." << std::endl;
+	std::cout << "Parameter Dog Constructor" << std::endl;
+	this->setType(type);
+	this->brain = new Brain();
+}
+
+Dog::Dog( Dog const & rhs )
+{
+	std::cout << "Copy Dog Constructor" << std::endl;
 	*this = rhs;
 }
 
-Dog::~Dog()
+Dog::~Dog( void )
 {
-	std::cout << "Dog destructor called." << std::endl;
 	delete this->brain;
+	std::cout << "Destructor Dog" << std::endl;
 }
 
-void		Dog::makeSound() const
+void	Dog::makeSound( void ) const 
 {
-	std::cout << "*WAOUF*" << std::endl;
+	std::cout << "The Dog is barking" << std::endl;
+}
+
+void		Dog::setType(std::string type) {
+	this->type = type;
+}
+
+std::string	Dog::getType() const {
+	return (this->type);
+}
+
+Dog&		Dog::operator=(Dog const & rhs)
+{
+	this->brain = new Brain(*(rhs.brain));
+	this->setType(rhs.getType());
+	return (*this);
 }

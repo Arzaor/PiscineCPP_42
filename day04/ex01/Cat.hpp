@@ -1,20 +1,27 @@
-#pragma once
-#ifndef CAT_H
-#define CAT_H
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+# include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
-	public:
-		Cat();
-		Cat(const Cat & rhs);
-		virtual ~Cat();
-
-		virtual void	makeSound() const;
 	private:
-		Brain* brain;
+			Brain*	brain;
+	public:
+			Cat( void );
+			Cat( std::string type );
+			Cat( Cat const & rhs );
+			virtual ~Cat( void );
+
+			void		setType(std::string type);
+			std::string	getType() const;
+			
+			virtual void		makeSound( void ) const ;
+
+			Cat&		operator=(Cat const & rhs);
+
 };
 
 #endif

@@ -1,20 +1,26 @@
-#pragma once
-#ifndef DOG_H
-#define DOG_H
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+# include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
-	public:
-		Dog();
-		Dog(const Dog & rhs);
-		virtual ~Dog();
-
-		virtual void	makeSound() const;
 	private:
-		Brain* brain;
+			Brain*	brain;
+	public:
+			Dog( void );
+			Dog( std::string type );
+			Dog( Dog const & rhs );
+			virtual ~Dog( void );
+
+			void		setType(std::string type);
+			std::string	getType()const;
+		
+			virtual void	makeSound( void ) const ;
+
+			Dog&		operator=(Dog const & rhs);
 };
 
 #endif

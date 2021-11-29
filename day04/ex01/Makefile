@@ -1,6 +1,6 @@
-NAME =		polymorphism
+NAME =		animal
 
-CXXFLAGS += -Wall -Wextra -Werror -std=c++98
+CXXFLAGS +=	-Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
 CXX =		clang++
 
@@ -13,12 +13,12 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-clean:		
-			rm -f $(OBJS)
+clean:
+			rm -rf $(OBJS)
 
 fclean:		clean
-			rm -f $(NAME)
+			rm -rf $(NAME)
 
-re:			fclean all
+re:			clean fclean all
 
-.PHONY:		re clean fclean all
+.PHONY: 	all clean fclean re

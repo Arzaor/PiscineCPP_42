@@ -39,6 +39,6 @@ void	WrongCat::makeSound() const
 
 WrongCat&	WrongCat::operator=(const WrongCat & rhs)
 {
-	this->setType(this->getType());
+	this->setType(rhs.getType());
 	return (*this);
 }

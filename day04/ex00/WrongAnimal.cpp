@@ -41,6 +41,6 @@ void	WrongAnimal::makeSound() const
 
 WrongAnimal&	WrongAnimal::operator=(const WrongAnimal & rhs)
 {
-	this->setType(this->getType());
+	this->setType(rhs.getType());
 	return (*this);
 }

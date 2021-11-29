@@ -1,21 +1,20 @@
-#pragma once
-#ifndef BRAIN_H
-#define BRAIN_H
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
 
 class Brain
 {
-	public:
-		Brain();
-		Brain(std::string idea);
-		Brain(const Brain & rhs);
-		~Brain();
-
-		Brain &operator=(Brain const & rhs);
 	private:
-		std::string ideas[100];
+			std::string	ideas[100];
+	public:
+			Brain( void );
+			Brain( std::string idea );
+			Brain( Brain const & rhs );
+			~Brain( void );
+
+			Brain&		operator=(Brain const & rhs);
 };
 
 #endif
+
