@@ -28,3 +28,9 @@ void		Dog::makeSound() const
 {
 	std::cout << "*WAOUF*" << std::endl;
 }
+
+Dog&	Dog::operator=(const Dog & rhs)
+{
+	this->setType(getType());
+	return (*this);
+}

@@ -9,9 +9,18 @@ class WrongAnimal
 {
 	public:
 		WrongAnimal();
-		~WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(WrongAnimal const & rhs);
+		~WrongAnimal(void);
+
+		void		setType(std::string type);
+		std::string	getType(void) const;
 
 		void	makeSound() const;
+
+		WrongAnimal&	operator=(WrongAnimal const & rhs);
+	protected:
+		std::string type;
 };
 
 #endif

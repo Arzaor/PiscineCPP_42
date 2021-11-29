@@ -28,3 +28,9 @@ void		Cat::makeSound() const
 {
 	std::cout << "*MEOW*" << std::endl;
 }
+
+Cat&	Cat::operator=(const Cat & rhs)
+{
+	this->setType(rhs.getType());
+	return (*this);
+}
