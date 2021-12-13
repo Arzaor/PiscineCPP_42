@@ -6,7 +6,7 @@
 /*   By: jbarette <jbarette@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 22:24:49 by jbarette          #+#    #+#             */
-/*   Updated: 2021/11/16 00:58:37 by jbarette         ###   ########.fr       */
+/*   Updated: 2021/12/13 15:26:57 by jbarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ int	main(int argc, char *argv[])
 {
 	std::string s;
 	if (argc < 4)
+	{
 		std::cout << "Vous devez indiquer 3 paramètres." << std::endl;
+		return 0;
+	}
 	std::ifstream	ifs(argv[1]);
 	if (!(ifs.is_open()))
 		std::cout << "Impossible d'ouvrir le fichier." << std::endl;
