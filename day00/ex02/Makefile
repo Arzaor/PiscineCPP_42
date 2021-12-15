@@ -1,4 +1,4 @@
-CC		= g++
+CC		= clang++
 CFLAGS	= -Wall -Wextra -Werror 
 NAME	= account
 OBJS	= tests.o Account.o

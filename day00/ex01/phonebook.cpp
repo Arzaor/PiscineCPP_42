@@ -7,20 +7,21 @@ Contact	PhoneBook::addContact(int id)
 
 	contact.setId(id);
 	std::cout << "First name" << std::endl;
-	std::getline (std::cin, tmp);
+	std::cin >> tmp;
 	contact.setFirstName(tmp);
 	std::cout << "Last name" << std::endl;
-	std::getline (std::cin, tmp);
+	std::cin >> tmp;
 	contact.setLastName(tmp);
 	std::cout << "Nickname" << std::endl;
-	std::getline (std::cin, tmp);
+	std::cin >> tmp;
 	contact.setNickanme(tmp);
 	std::cout << "Phone number" << std::endl;
-	std::getline (std::cin, tmp);
+	std::cin >> tmp;
 	contact.setPhoneNumber(tmp);
 	std::cout << "Darkest secret" << std::endl;
-	std::getline (std::cin, tmp);
+	std::cin >> tmp;
 	contact.setDarkestSecret(tmp);
+
 	return contact;
 }
 

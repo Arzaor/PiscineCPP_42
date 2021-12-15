@@ -16,7 +16,7 @@ class PhoneBook
 
 	private:
 	
-	Contact contactBook[7];
+	Contact contactBook[8];
 };
 
 #endif
