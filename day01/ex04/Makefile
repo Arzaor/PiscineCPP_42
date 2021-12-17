@@ -1,4 +1,4 @@
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Wextra -Werror 
 NAME	= replace
 OBJS	= main.o

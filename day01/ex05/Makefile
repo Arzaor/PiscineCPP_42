@@ -1,4 +1,4 @@
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Wextra -Werror 
 NAME	= karen
 OBJS	= main.o Karen.o

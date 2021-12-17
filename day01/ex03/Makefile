@@ -1,4 +1,4 @@
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Wextra -Werror 
 NAME	= weapon
 OBJS	= main.o Weapon.o HumanA.o HumanB.o

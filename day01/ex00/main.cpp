@@ -6,7 +6,7 @@
 /*   By: jbarette <jbarette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 01:30:37 by jbarette          #+#    #+#             */
-/*   Updated: 2021/11/29 13:07:55 by jbarette         ###   ########.fr       */
+/*   Updated: 2021/12/17 17:03:32 by jbarette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ Zombie*	newZombie(std::string name);
 
 int     main(void)
 {
-    Zombie Hamza("Hamza");
-    Hamza.annonce();
+    Zombie zombie1("Zombie1");
+    zombie1.annonce();
 
-    randomChump("Daniela");
+    randomChump("Zombie2");
 
-    Zombie* Jeremy = newZombie("Jeremy");
-    Jeremy->annonce();
+    Zombie* zombie3 = newZombie("Zombie3");
+    zombie3->annonce();
 
-    delete Jeremy;
+    delete zombie3;
 
     return (0);
 }
