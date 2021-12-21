@@ -1,4 +1,4 @@
-CC		= g++
+CC		= clang++
 CFLAGS	= -Wall -Wextra -Werror 
 NAME	= fixed
 OBJS	= main.o Fixed.o
