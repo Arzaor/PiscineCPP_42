@@ -1,57 +1,55 @@
-#pragma once
-#ifndef FIXED_H
-#define FIXED_H
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-#include <string>
-#include <iostream>
-#include <cmath>
+# include <iostream>
+# include <string>
+# include <cmath>
 
 class Fixed
 {
 	public:
+
 		Fixed();
-		Fixed(Fixed const & rhs);
+		Fixed( int const value );
+		Fixed( float const value );
+		Fixed( Fixed const & src );
 		~Fixed();
 
-		Fixed(const int n);
-		Fixed(const float n);
+		Fixed &		operator=( Fixed const & rhs );
 
-		Fixed &	operator=(Fixed const & rhs);
+		Fixed		operator+( Fixed const & rhs ) const;
+		Fixed		operator-( Fixed const & rhs ) const;
+		Fixed		operator*( Fixed const & rhs ) const;
+		Fixed		operator/( Fixed const & rhs ) const;
+		Fixed		operator++( void );
+		Fixed		operator--( void );
+		Fixed		operator++( int );
+		Fixed		operator--( int );
 
-		Fixed operator+(Fixed const & rhs);
-		Fixed operator-(Fixed const & rhs);
-		Fixed operator*(Fixed const & rhs);
-		Fixed operator/(Fixed const & rhs);
+		float		toFloat( void ) const;
+		int			toInt( void ) const;
+		int			getRawBits( void ) const;
+		void		setRawBits( int const raw );
 
-		bool operator>(const Fixed & rhs);
-		bool operator<(const Fixed & rhs);
-		bool operator<=(const Fixed & rhs);
-		bool operator>=(const Fixed & rhs);
-		bool operator==(const Fixed & rhs);
-		bool operator!=(const Fixed & rhs);
-
-		Fixed&	operator++(void);
-		Fixed	operator++(int);
-
-		Fixed&	operator--(void);
-		Fixed	operator--(int);
-
-		int		toInt(void) const;
-		float	toFloat(void) const;
-
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-
-		static Fixed	max(Fixed & lhs, Fixed & rhs);
-		static Fixed	max(const Fixed & lhs, const Fixed & rhs);
-		static Fixed	min(Fixed & lhs, Fixed & rhs);
-		static Fixed	min(const Fixed & lhs, const Fixed & rhs);
+		static float	getEpsilon( void );
+		static Fixed		&min(Fixed & lhs, Fixed & rhs);
+		static Fixed		&max(Fixed & lhs, Fixed & rhs);
+		static Fixed const	&min(Fixed const & lhs, Fixed const & rhs);
+		static Fixed const	&max(Fixed const & lhs, Fixed const & rhs);
 
 	private:
-		int	raw;
-		static int const rawBits = 8;
+		int					_value;
+	
+		static const int	_floatingPart;
+		static const float	_e;
 };
 
-std::ostream&	operator<<(std::ostream& ifs, Fixed const & rhs);
+std::ostream &	operator<<(std::ostream & o, Fixed const & rhs);
+bool			operator!=(Fixed const &lhs, Fixed const & rhs);
+bool			operator==(Fixed const &lhs, Fixed const & rhs);
+bool			operator<=(Fixed const &lhs, Fixed const & rhs);
+bool			operator>=(Fixed const &lhs, Fixed const & rhs);
+bool			operator<(Fixed const &lhs, Fixed const & rhs);
+bool			operator>(Fixed const &lhs, Fixed const & rhs);
 
 #endif

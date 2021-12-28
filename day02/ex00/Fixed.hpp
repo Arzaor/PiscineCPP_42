@@ -18,8 +18,8 @@ class Fixed
 		void	setRawBits(int const raw);
 
 	private:
-		int	raw;
-		static int const rawBits;
+		int	_value;
+		static int const _floatingPart;
 };
 
 #endif

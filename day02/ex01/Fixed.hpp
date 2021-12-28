@@ -25,8 +25,8 @@ class Fixed
 		void	setRawBits(int const raw);
 
 	private:
-		int	raw;
-		static int const rawBits = 8;
+		int	_value;
+		static int const _floatingPart;
 };
 
 std::ostream&	operator<<(std::ostream& ifs, Fixed const & rhs);
