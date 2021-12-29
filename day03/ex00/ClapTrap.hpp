@@ -20,7 +20,7 @@ class ClapTrap
 		void	beRepaired(unsigned int amount);
 
 		void		setName(std::string name);
-		std::string	getName(void);
+		std::string	getName(void) const;
 		void		setHitPoints(int hitPoints);
 		int			getHitPoints(void);
 		void		setEnergyPoints(int energyPoints);

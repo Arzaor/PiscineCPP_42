@@ -3,20 +3,9 @@
 
 int	main(void)
 {
-	// ClapTrap	ClapTrap1("Hamza");
-	// ClapTrap	ClapTrap2(ClapTrap1);
-	// ClapTrap	ClapTrap3("Daniela");
-	// ClapTrap	ClapTrap4;
-	// ClapTrap4.setName("ClapTrap4");
-
-	// ClapTrap1.attack("ClapTrap4");
-	// ClapTrap4.takeDamage(ClapTrap1.getAttackDamage());
-	// ClapTrap4.beRepaired(5);
-	// ClapTrap3.attack("Hamza");
-
 	ScavTrap	scavTrap1;
 	scavTrap1.setName("Jeremy");
-	ScavTrap	scavTrap2("Hamza");
+	ScavTrap	scavTrap2("Daniela");
 
 	scavTrap2.attack("Jeremy");
 	scavTrap1.takeDamage(scavTrap2.getAttackDamage());

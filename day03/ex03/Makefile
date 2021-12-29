@@ -1,24 +1,18 @@
-NAME =		diamondtrap
+CC		= c++
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
+NAME	= claptrap
+OBJS	= main.o ClapTrap.o ScavTrap.o FragTrap.o DiamondTrap.o
 
-CXXFLAGS += -Wall -Wextra -Werror -std=c++98
+all:	$(NAME)
 
-CXX =		clang++
+$(NAME): $(OBJS)
+	$(CC) -o $(NAME) $(OBJS)
 
-SRCS =		$(wildcard *.cpp)
+clean:
+	rm $(NAME) $(OBJS)
 
-OBJS =		$(SRCS:.cpp=.o)
+fclean: clean
+	rm -f $(NAME)
 
-all:		$(NAME)
-
-$(NAME):	$(OBJS)
-			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-
-clean:		
-			rm -f $(OBJS)
-
-fclean:		clean
-			rm -f $(NAME)
-
-re:			fclean all
-
-.PHONY:		re clean fclean all
+%.o: %.cpp
+	$(CC) $(CFLAGS) -o $@ -c $<

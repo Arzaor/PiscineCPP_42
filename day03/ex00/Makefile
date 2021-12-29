@@ -1,5 +1,5 @@
-CC		= g++
-CFLAGS	= -Wall -Wextra -Werror 
+CC		= c++
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= claptrap
 OBJS	= main.o ClapTrap.o
 
