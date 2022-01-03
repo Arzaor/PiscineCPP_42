@@ -1,8 +1,8 @@
 NAME =		animal
 
-CXXFLAGS +=	-Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
+CXXFLAGS +=	-Wall -Wextra -Werror -std=c++98
 
-CXX =		clang++
+CXX =		c++
 
 SRCS =		$(wildcard *.cpp)
 

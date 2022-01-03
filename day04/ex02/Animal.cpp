@@ -30,7 +30,6 @@ std::string	Animal::getType() const {
 	return (this->type);
 }
 
-// === Method ===
 void	Animal::makeSound() const 
 {
 	std::cout << "An animal is making a sound" << std::endl;

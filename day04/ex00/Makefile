@@ -2,7 +2,7 @@ NAME =		polymorphism
 
 CXXFLAGS += -Wall -Wextra -Werror -std=c++98
 
-CXX =		clang++
+CXX =		c++
 
 SRCS =		$(wildcard *.cpp)
 
