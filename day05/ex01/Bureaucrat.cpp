@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat(void) : _name("defaultBureaucrat") {}
+
 Bureaucrat::Bureaucrat(const std::string _name, int _grade) : _name(_name)
 {
 	if (_grade < 1)

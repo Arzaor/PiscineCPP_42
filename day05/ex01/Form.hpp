@@ -9,6 +9,7 @@ class Bureaucrat;
 class Form
 {
     public:
+        Form();
         Form(const std::string _name, const int _gradeSign, const int _gradeExec);
         Form(const Form & rhs);
         ~Form();

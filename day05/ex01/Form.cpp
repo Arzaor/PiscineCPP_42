@@ -1,6 +1,11 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
+Form::Form(const std::string _name, const int _gradeSign, const int _gradeExec) : _name("defaultForm"), _gradeSign(5), _gradeExec(7)
+{
+    this->_sign = false;
+}
+
 Form::Form(const std::string _name, const int _gradeSign, const int _gradeExec) : _name(_name), _gradeSign(_gradeSign), _gradeExec(_gradeExec)
 {
     if (_gradeSign < 1 || _gradeExec < 1)
