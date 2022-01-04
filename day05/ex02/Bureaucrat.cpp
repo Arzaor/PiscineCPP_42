@@ -69,6 +69,14 @@ void		Bureaucrat::signForm(Form & rhs)
 		std::cout << this->getName() << " signs " << rhs.getName() << std::endl; 
 }
 
+void		Bureaucrat::executeForm(Form const & form) const
+{
+	if (form.execForm())
+		std::cout << this->getName() << " executs " << form.getName() << std::endl;
+	else
+		std::cout << "Bureaucrat doesn't execut this form." << std::endl;
+}
+
 std::string Bureaucrat::getName() const
 {
 	return _name;

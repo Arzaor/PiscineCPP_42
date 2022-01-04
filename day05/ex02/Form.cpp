@@ -1,7 +1,7 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(const std::string _name, const int _gradeSign, const int _gradeExec) : _name("defaultForm"), _gradeSign(5), _gradeExec(7)
+Form::Form(void) : _name("defaultForm"), _gradeSign(150), _gradeExec(150)
 {
     this->_sign = false;
 }
@@ -44,6 +44,19 @@ Form&       Form::beSigned(Bureaucrat & rhs)
         rhs.signForm(*this);
     }
     return (*this);
+}
+
+void        Form::execute(Bureaucrat const & executor) const
+{
+    if (!(this->getSign()))
+        throw IsNotSignedException();
+    else
+    {
+        if (executor.getGrade() > this->getGradeExec())
+            throw GradeTooLowException();
+		else
+			executor.executeForm(*this);
+    }
 }
 
 std::string Form::getName() const
