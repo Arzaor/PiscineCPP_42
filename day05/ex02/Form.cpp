@@ -31,19 +31,11 @@ Form& Form::operator=(const Form & rhs)
 	return (*this);
 }
 
-Form&       Form::beSigned(Bureaucrat & rhs)
+void       Form::beSigned(Bureaucrat & rhs)
 {
     if (rhs.getGrade() > this->getGradeSign())
-    {
-        rhs.signForm(*this);
         throw GradeTooLowException();
-    }
-    else
-    {
-        this->_sign = true;
-        rhs.signForm(*this);
-    }
-    return (*this);
+	this->_sign = true;
 }
 
 void        Form::execute(Bureaucrat const & executor) const
@@ -55,13 +47,18 @@ void        Form::execute(Bureaucrat const & executor) const
         if (executor.getGrade() > this->getGradeExec())
             throw GradeTooLowException();
 		else
-			executor.executeForm(*this);
+			this->execForm();
     }
 }
 
 std::string Form::getName() const
 {
     return this->_name;
+}
+
+void		Form::setSign(bool sign)
+{
+	this->_sign = sign;
 }
 
 bool        Form::getSign() const

@@ -10,7 +10,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string _target) : Form("RobotomyRe
 	this->_target = _target;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & rhs)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & rhs) : Form(rhs.getName(), rhs.getGradeSign(), rhs.getGradeExec())
 {
 	*this = rhs;
 }
@@ -20,6 +20,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm & rhs)
 {
 	this->_target = rhs._target;
+	this->setSign(rhs.getSign());
 	return (*this);
 }
 

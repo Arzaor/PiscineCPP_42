@@ -16,11 +16,12 @@ class Form
 
         Form &operator=(const Form & rhs);
 
-        Form&   		beSigned(Bureaucrat & rhs);
+       	void			beSigned(Bureaucrat & rhs);
         void    		execute(Bureaucrat const & executor) const;
 		virtual bool	execForm() const = 0;
 
         std::string getName() const;
+		void		setSign(bool sign);
         bool        getSign() const;
         int         getGradeSign() const;
         int         getGradeExec() const;

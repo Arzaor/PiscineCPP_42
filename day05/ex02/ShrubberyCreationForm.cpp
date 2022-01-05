@@ -1,16 +1,16 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 72, 45)
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137)
 {
 	this->_target = "defaultTarget";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string _target) : Form("ShrubberyCreationForm", 72, 45)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string _target) : Form("ShrubberyCreationForm", 145, 137)
 {
 	this->_target = _target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & rhs)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & rhs) : Form(rhs.getName(), rhs.getGradeSign(), rhs.getGradeExec())
 {
 	*this = rhs;
 }
@@ -20,6 +20,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm & rhs)
 {
 	this->_target = rhs._target;
+	this->setSign(rhs.getSign());
 	return (*this);
 }
 
