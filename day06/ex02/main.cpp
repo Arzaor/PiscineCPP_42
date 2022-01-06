@@ -1,29 +1,54 @@
 #include "Base.hpp"
-
-class A : public Base {};
-class B : public Base {};
-class C : public Base {};
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
 Base*	generate(void)
 {
-	Base* base = new Base();
-	srand(time(NULL));
-	int i = rand() % 3 + 1;
-	printf("%d", i);
+	int i = rand() % 3;
+
 	switch (i)
 	{
 		case 0:
-			new A();
+			return (new A());
 		case 1:
-			new B();
+			return (new B());
 		case 2:
-			new C();
+			return (new C());
 	}
-	return (base);
+
+	return (NULL);
+}
+
+void	identify(Base* p)
+{
+	if (dynamic_cast<A*>(p) != NULL)
+		std::cout << "A" << std::endl;
+	if (dynamic_cast<B*>(p) != NULL)
+		std::cout << "B" << std::endl;
+	if (dynamic_cast<C*>(p) != NULL)
+		std::cout << "C" << std::endl;
+}
+
+void	identify(Base& p)
+{
+	if (dynamic_cast<A*>(&p) != NULL)
+		std::cout << "A" << std::endl;
+	if (dynamic_cast<B*>(&p) != NULL)
+		std::cout << "B" << std::endl;
+	if (dynamic_cast<B*>(&p) != NULL)
+		std::cout << "B" << std::endl;
 }
 
 int	main(void)
 {
-	Base*	base = generate();
-	(void)base;
+	std::srand(time(NULL));
+
+	Base*	base;
+
+	base = generate();
+	identify(base);
+	identify(*base);
+
+	return (0);
 }
