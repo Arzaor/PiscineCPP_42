@@ -1,5 +1,6 @@
 #pragma once
 #ifndef CONVERT_H
+#define CONVERT_H
 
 #include <iostream>
 #include <string>
