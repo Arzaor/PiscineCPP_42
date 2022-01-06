@@ -3,22 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include <limits>
+#include <cmath>
 
-class Convert
-{
-    public:
-        Convert(void);
-        Convert(std::string _parameter);
-        Convert(const Convert & rhs);
-        ~Convert(void);
-
-        Convert &operator=(const Convert & rhs);
-
-        void        convertParameter(std::string _parameter);
-
-        std::string getParameter() const;
-    private:
-        std::string _parameter;
-};
+void	convert_char(double convert);
+void	convert_int(double convert);
+void	convert_float(double convert);
+void	convert_double(double convert);
 
 #endif

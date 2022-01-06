@@ -1,28 +1,52 @@
 #include "Convert.hpp"
 
-Convert::Convert(void)
+void	convert_char(double convert)
 {
-    this->_parameter = '0';
+	if (convert <= 32 || convert >= 127)
+	{
+		std::cout << "Non displayable" << std::endl;
+		return ;
+	}
+	char	c = static_cast<char>(convert);
+	if (c == 0)
+	{
+		std::cout << "impossible" << std::endl;
+		return ;
+	}
+	std::cout << "'" << c << "'" << std::endl;
+	return ;
 }
 
-Convert::Convert(std::string _parameter)
+void	convert_int(double convert)
 {
-    this->_parameter = _parameter;
+	if (convert > INT_MAX || convert < INT_MIN || (convert != convert))
+	{
+		std::cout << "impossible" << std::endl;
+		return ;
+	}
+	int		c = static_cast<int>(convert);
+	std::cout << c << std::endl;
 }
 
-Convert::Convert(const Convert & rhs)
+void	convert_float(double convert)
 {
-    this->_parameter = rhs.getParameter();
-    *this = rhs;
+	float	c = static_cast<float>(convert);
+
+	if (convert != convert)
+	{
+		std::cout << "nanf" << std::endl;
+		return ;
+	}
+	if (!(c - static_cast<int>(c)))
+		std::cout << c << ".0f" <<std::endl;
+	else
+		std::cout << c << "f" << std::endl;
 }
 
-Convert&    Convert::operator=(const Convert & rhs)
+void	convert_double(double convert)
 {
-    this->_parameter = rhs.getParameter();
-    return (*this);
-}
-
-std::string Convert::getParameter() const
-{
-    return this->_parameter;
+	if (!(convert - static_cast<int>(convert)))
+		std::cout << convert << ".0" <<std::endl;
+	else
+		std::cout << convert << "" << std::endl;
 }
