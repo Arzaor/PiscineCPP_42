@@ -9,7 +9,7 @@ void print( T const & x )
 
 int main()
 {
-	int tab[] = { 0, 1, 2, 3, 4 }; // <--- J'ai jamais compris pourquoi on peut pas ecrire int[] tab. Ca aurait plus de sens vous trouvez pas ?
+	int tab[] = { 0, 1, 2, 3, 4 };
 
 	iter(tab, 5, print);
 
