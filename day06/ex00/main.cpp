@@ -5,7 +5,7 @@ int		main(int ac, char **av)
 	double	to_convert;
 	if (ac == 2)
 	{
-		std::string str(av[1]);
+		std::string str = av[1];
 		if (av[1][0] && !(av[1][1]) && (av[1][0] < '0' || av[1][0] > '9'))
 			to_convert = static_cast<double>(av[1][0]);
 		else

@@ -36,8 +36,8 @@ void	identify(Base& p)
 		std::cout << "A" << std::endl;
 	if (dynamic_cast<B*>(&p) != NULL)
 		std::cout << "B" << std::endl;
-	if (dynamic_cast<B*>(&p) != NULL)
-		std::cout << "B" << std::endl;
+	if (dynamic_cast<C*>(&p) != NULL)
+		std::cout << "C" << std::endl;
 }
 
 int	main(void)
