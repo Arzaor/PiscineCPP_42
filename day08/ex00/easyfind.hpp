@@ -1,21 +1,16 @@
-#pragma once
-#ifndef EASYFIND_H
-#define EASYFIND_H
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-#include <string>
 #include <iostream>
-#include <list>
+#include <iterator>
+#include <algorithm>
 #include <vector>
+#include <list>
 
-template < typename T >
-int	easyfind(T container, int n)
+template<typename T>
+typename T::iterator easyfind(T &container, int n)
 {
-	typename T::iterator	it;
-
-	it = find(container.begin(), container.end(), n);
-	if (it != container.end())
-		return (n);
-	throw std::runtime_error("Exception: Occurence Not Found");
+	return (std::find(container.begin(), container.end(), n));
 }
 
 #endif

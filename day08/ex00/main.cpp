@@ -1,36 +1,32 @@
 #include "easyfind.hpp"
 
-int	main(void)
+int		main()
 {
-	std::list<int>			list1;
-	std::vector<int>		vector1;
+	std::vector<int>::iterator it;
+	std::vector<int> vec;
 
-	list1.push_back(13);
-	list1.push_back(26);
-	list1.push_back(1);
+	for (int i = 0 ; i < 10 ; i++)
+		vec.push_back(i);
 
-	vector1.push_back(67);
-	vector1.push_back(6);
-	vector1.push_back(69);
-
-	try
-	{
-		int		ret;
-
-		ret = easyfind(list1, 26);
-		std::cout << ret << std::endl;
+	it = easyfind(vec, 2);
+	if (it != vec.end())
+		std::cout << "Trouve : " << *it << std::endl;
+    else 
+		std::cout << "Error : nothing found." << std::endl;
 	
-		ret = easyfind(vector1, 6);
-		std::cout << ret << std::endl;
-		
-		ret = easyfind(vector1, 69);
-		std::cout << ret << std::endl;
+	std::cout << std::endl;
 
-		ret = easyfind(vector1, 999);
-		std::cout << ret << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	std::list<int>::iterator l_it;
+	std::list<int> list;
+
+	for (int i = 0 ; i < 10 ; i++)
+		list.push_back(i);
+
+	l_it = easyfind(list, 2);
+	if (l_it != list.end())
+		std::cout << "Easyfind : " << *l_it << std::endl;
+	else
+		std::cout << "Error : nothing found." << std::endl;
+
+	return (0);
 }
